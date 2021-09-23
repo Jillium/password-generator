@@ -1,4 +1,9 @@
 // Assignment code here
+const numberChars = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const lowerChars = "abcdefghijklmnopqrstuvwxyz";
+
+
 
 // ask for length of password >=8 <=128
 
@@ -25,39 +30,35 @@ function writePassword() {
 }
 
 function generatePassword() {
-  var characterAmount = "";
-  var includeUpperCase = "";
-  var includeLowerCase = "";
-  var includeNumbers = "";
-  var includeSymbols = "";
-
-  while (characterAmount === "" || characterAmount === null) {
-    characterAmount = prompt ("How many characters would you like your password to be? Please choose a number between 8 and 128.");
-    console.log(characterAmount);
+  var characterAmount = prompt("How many characters would you like your password to be? Please chooose a number between 8 and 128");
+  characterAmount = parseInt(characterAmount);
+  if (characterAmount <8 || characterAmount >128) {
+    prompt("Please make a valid selection between 8 and 128");
+    generatePassword();
   }
-
-  while (includeUpperCase === "" || includeUpperCase === null) {
-    includeUpperCase = prompt ('Would you like to use Uppercase letters? Enter "YES" or "NO".');
-    console.log(includeUpperCase);
+  else {
+    prompt("Okay, your password will be " + characterAmount + " digits long.");
   }
-
-  while (includeLowerCase === "" || includeLowerCase === null) {
-    includeLowerCase = prompt ('Would you like to use Lowercase letters? Enter "YES" or "NO.');
-    console.log(includeLowerCase);
-  }
-
-  while (includeNumbers === "" || includeNumbers === null) {
-    includeNumbers = prompt ('Would you like to include Numbers? Enter "YES" or "NO".');
-    console.log(includeNumbers);
-  }
-
-  while (includeSymbols === "" || includeSymbols === null) {
-    includeSymbols = prompt ('Would you like to include Symbols? Enter "YES" or "NO".');
-  }
- 
   
-  return characterAmount;
-}
+
+  for (var i = 0; i <characterAmount; i++) {
+    stringNumberChars();
+  }
+
+  
+  };
+
+  var stringNumberChars = function() {
+    var value = Math.floor(Math.random() * (numberChars.length));
+    console.log(value);
+  }
+
+  
+
+ 
+
+  
+
 
 
 
