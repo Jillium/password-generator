@@ -1,9 +1,9 @@
 // Assignment code here
-var passwordChars = [];
-var numberChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-var upperChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'Y', 'Z'];
-var lowerChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z'];
-var specialChars = ['!', '@', "#", '$', "%", '&', '*'];
+let passwordChars = [];
+let numberChars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+let upperChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'Y', 'Z'];
+let lowerChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z'];
+let specialChars = ['!', '@', "#", '$', "%", '&', '*'];
 
 
 
@@ -41,15 +41,57 @@ function generatePassword() {
   else {
     prompt("Okay, your password will be " + characterAmount + " digits long.");
   }
-   numberChars = confirm('Would you like to include numbers in your password?');
-    console.log(numberChars);
+   
+  
+  numberChars = confirm('Would you like to include numbers in your password?');
+    
    upperChars = confirm('Would you like to include uppercase letters in your password?');
     console.log(upperChars);
    lowerChars = confirm('Would you like to include lowercase letters in your password?');
     console.log(lowerChars);
    specialChars = confirm('Would you like to include symbols in your password?');
     console.log(specialChars);
-  
+
+    if(numberChars = true) {
+      passwordChars = [...passwordChars, ...numberChars]
+      console.log(passwordChars)
+    }
+    if(upperChars) {
+      passwordChars = [...passwordChars, ...upperChars]
+      console.log(upperChars)
+    }
+    if(lowerChars) {
+      passwordChars = [...passwordChars, ...lowerChars]
+      console.log(lowerChars)
+    }
+    if (specialChars) {
+      specialChars = [...passwordChars, ...specialChars]
+      console.log(specialChars)
+    }
+    else {
+      prompt('Please select at least one value.');
+    }
+    generatePassword();
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    var generatedPassword = ''
+    
+    for (let i = 0; i <characterAmount; i++) {
+      var randomSelection = passwordChars[Math.floor(Math.random() * passwordChars.length)]
+      console.log(randomSelection);
+      generatedPassword = generatedPassword + randomSelection
+    }  
+
+    console.log(generatedPassword);
 
 
 
