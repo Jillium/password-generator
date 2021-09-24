@@ -6,6 +6,6 @@ HTML and CSS were provided, I added javascript functionality to add the ability 
 
 [Github link](https://jillium.github.io/password-generator/)
 
-<img src=".Develop.assets/images/screenshot.png">
+<img src=".assets/images/screenshot.png">
 
 
