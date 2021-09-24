@@ -86,7 +86,7 @@ function generatePassword() {
        
       }
 
-      console.log(randomPassword);
+      randomPassword = alert('Your password is ' + randomPassword);
 
       
 
