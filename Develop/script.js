@@ -51,60 +51,64 @@ function generatePassword() {
   let confirmLowerChars = confirm('Would you like to include lowercase letters in your password?');
   let confirmSpecialChars = confirm('Would you like to include symbols in your password?');
     if(confirmNumberChars) {
-      passwordChars = [...passwordChars, numberChars];
-    console.log(passwordChars);
+      passwordChars = passwordChars.concat(numberChars)
     }
     else if(confirmNumberChars === false) {
       passwordChars = [...passwordChars];
-      console.log(passwordChars);
     }
     if(confirmUpperChars) {
-      passwordChars = [...passwordChars, upperChars];
-      console.log(passwordChars);
+      passwordChars = passwordChars.concat(upperChars)
     }
       else if(confirmUpperChars === false) {
         passwordChars = [passwordChars];
-        console.log(passwordChars);
       }
     if(confirmLowerChars) {
-      passwordChars = [...passwordChars, lowerChars];
-      console.log(passwordChars);
+      passwordChars = passwordChars.concat(lowerChars)
     }
     else if(confirmLowerChars === false) {
-      passwordChars = [...passwordChars];
     }
     if (confirmSpecialChars) {
-      passwordChars = [...passwordChars, specialChars];
-      console.log(passwordChars);
+      passwordChars = passwordChars.concat(specialChars)
     }
     else if(confirmSpecialChars === false) {
       passwordChars = [...passwordChars];
     }
+
+    console.log(passwordChars);
     
 
-    
-    
-    
+    var randomPassword = ''
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    var generatedPassword = ''
-    
     for (let i = 0; i <characterAmount; i++) {
-      var randomSelection = passwordChars[Math.floor(Math.random() * passwordChars.length)]
-      console.log(randomSelection);
-      generatedPassword = generatedPassword + randomSelection
-    }  
+       var randomChoice = passwordChars[Math.floor(Math.random() * passwordChars.length)]
+       console.log(randomChoice);
+       randomPassword = randomPassword + randomChoice
+       
+      }
 
-    console.log(generatedPassword);
+      console.log(randomPassword);
+
+      
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+
+   
 
 
 
