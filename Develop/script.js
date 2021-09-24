@@ -1,6 +1,6 @@
 // Assignment code here
-let passwordChars = [];
-let numberChars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var passwordChars = [];
+let numberChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 let upperChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'Y', 'Z'];
 let lowerChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z'];
 let specialChars = ['!', '@', "#", '$', "%", '&', '*'];
@@ -43,35 +43,48 @@ function generatePassword() {
   }
    
   
-  numberChars = confirm('Would you like to include numbers in your password?');
-    
-   upperChars = confirm('Would you like to include uppercase letters in your password?');
-    console.log(upperChars);
-   lowerChars = confirm('Would you like to include lowercase letters in your password?');
-    console.log(lowerChars);
-   specialChars = confirm('Would you like to include symbols in your password?');
-    console.log(specialChars);
 
-    if(numberChars = true) {
-      passwordChars = [...passwordChars, ...numberChars]
-      console.log(passwordChars)
+
+  
+  let confirmNumberChars = confirm('Would you like to include numbers in your password?');
+  let confirmUpperChars = confirm('Would you like to include uppercase letters in your password?');
+  let confirmLowerChars = confirm('Would you like to include lowercase letters in your password?');
+  let confirmSpecialChars = confirm('Would you like to include symbols in your password?');
+    if(confirmNumberChars) {
+      passwordChars = [...passwordChars, numberChars];
+    console.log(passwordChars);
     }
-    if(upperChars) {
-      passwordChars = [...passwordChars, ...upperChars]
-      console.log(upperChars)
+    else if(confirmNumberChars === false) {
+      passwordChars = [...passwordChars];
+      console.log(passwordChars);
     }
-    if(lowerChars) {
-      passwordChars = [...passwordChars, ...lowerChars]
-      console.log(lowerChars)
+    if(confirmUpperChars) {
+      passwordChars = [...passwordChars, upperChars];
+      console.log(passwordChars);
     }
-    if (specialChars) {
-      specialChars = [...passwordChars, ...specialChars]
-      console.log(specialChars)
+      else if(confirmUpperChars === false) {
+        passwordChars = [passwordChars];
+        console.log(passwordChars);
+      }
+    if(confirmLowerChars) {
+      passwordChars = [...passwordChars, lowerChars];
+      console.log(passwordChars);
     }
-    else {
-      prompt('Please select at least one value.');
+    else if(confirmLowerChars === false) {
+      passwordChars = [...passwordChars];
     }
-    generatePassword();
+    if (confirmSpecialChars) {
+      passwordChars = [...passwordChars, specialChars];
+      console.log(passwordChars);
+    }
+    else if(confirmSpecialChars === false) {
+      passwordChars = [...passwordChars];
+    }
+    
+
+    
+    
+    
 
     
     
