@@ -67,7 +67,7 @@ function generatePassword() {
     passwordChars = [...passwordChars];
   }
 
-  console.log(passwordChars);
+  
 
 
   var randomPassword = ''
@@ -80,6 +80,7 @@ function generatePassword() {
   }
 
   // randomPassword = alert('Your password is ' + randomPassword);
+  //This alert could be used instead of writing password to the password input 
 
 
 
