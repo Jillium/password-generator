@@ -22,6 +22,75 @@ let specialChars = ['!', '@', "#", '$', "%", '&', '*'];
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+
+
+function generatePassword() {
+  var characterAmount = prompt("How many characters would you like your password to be? Please choose a number between 8 and 128");
+  characterAmount = parseInt(characterAmount);
+  if (characterAmount < 8 || characterAmount > 128) {
+    prompt("Please make a valid selection between 8 and 128");
+    generatePassword();
+  }
+  else {
+    prompt("Okay, your password will be " + characterAmount + " digits long.");
+  }
+
+
+
+
+
+  let confirmNumberChars = confirm('Would you like to include numbers in your password?');
+  let confirmUpperChars = confirm('Would you like to include uppercase letters in your password?');
+  let confirmLowerChars = confirm('Would you like to include lowercase letters in your password?');
+  let confirmSpecialChars = confirm('Would you like to include symbols in your password?');
+  if (confirmNumberChars) {
+    passwordChars = passwordChars.concat(numberChars)
+  }
+  else if (confirmNumberChars === false) {
+    passwordChars = [...passwordChars];
+  }
+  if (confirmUpperChars) {
+    passwordChars = passwordChars.concat(upperChars)
+  }
+  else if (confirmUpperChars === false) {
+    passwordChars = [passwordChars];
+  }
+  if (confirmLowerChars) {
+    passwordChars = passwordChars.concat(lowerChars)
+  }
+  else if (confirmLowerChars === false) {
+  }
+  if (confirmSpecialChars) {
+    passwordChars = passwordChars.concat(specialChars)
+  }
+  else if (confirmSpecialChars === false) {
+    passwordChars = [...passwordChars];
+  }
+
+  console.log(passwordChars);
+
+
+  var randomPassword = ''
+
+  for (let i = 0; i < characterAmount; i++) {
+    var randomChoice = passwordChars[Math.floor(Math.random() * passwordChars.length)]
+    console.log(randomChoice);
+    randomPassword = randomPassword + randomChoice
+
+  }
+
+  // randomPassword = alert('Your password is ' + randomPassword);
+
+
+
+return randomPassword;
+
+
+
+};
+
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -31,103 +100,13 @@ function writePassword() {
 
 }
 
-function generatePassword() {
-  var characterAmount = prompt("How many characters would you like your password to be? Please choose a number between 8 and 128");
-  characterAmount = parseInt(characterAmount);
-  if (characterAmount <8 || characterAmount >128) {
-    prompt("Please make a valid selection between 8 and 128");
-    generatePassword();
-  }
-  else {
-    prompt("Okay, your password will be " + characterAmount + " digits long.");
-  }
-   
-  
-
-
-  
-  let confirmNumberChars = confirm('Would you like to include numbers in your password?');
-  let confirmUpperChars = confirm('Would you like to include uppercase letters in your password?');
-  let confirmLowerChars = confirm('Would you like to include lowercase letters in your password?');
-  let confirmSpecialChars = confirm('Would you like to include symbols in your password?');
-    if(confirmNumberChars) {
-      passwordChars = passwordChars.concat(numberChars)
-    }
-    else if(confirmNumberChars === false) {
-      passwordChars = [...passwordChars];
-    }
-    if(confirmUpperChars) {
-      passwordChars = passwordChars.concat(upperChars)
-    }
-      else if(confirmUpperChars === false) {
-        passwordChars = [passwordChars];
-      }
-    if(confirmLowerChars) {
-      passwordChars = passwordChars.concat(lowerChars)
-    }
-    else if(confirmLowerChars === false) {
-    }
-    if (confirmSpecialChars) {
-      passwordChars = passwordChars.concat(specialChars)
-    }
-    else if(confirmSpecialChars === false) {
-      passwordChars = [...passwordChars];
-    }
-
-    console.log(passwordChars);
-    
-
-    var randomPassword = ''
-
-    for (let i = 0; i <characterAmount; i++) {
-       var randomChoice = passwordChars[Math.floor(Math.random() * passwordChars.length)]
-       console.log(randomChoice);
-       randomPassword = randomPassword + randomChoice
-       
-      }
-
-      randomPassword = alert('Your password is ' + randomPassword);
-
-      
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   
-
-   
 
 
 
 
 
- 
-   
-   
-   
-   
-  };
 
-   
- 
-  
 
- 
-
-  
 
 
 
