@@ -10,7 +10,7 @@ A password generator made as a project for bootcamp
 https://jillium.github.io/password-generator/
 
 
-<img src=".images/screenshot.png">
+<img src="./images/screenshot.png">
 
 
 
